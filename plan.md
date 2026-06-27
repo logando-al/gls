@@ -1,8 +1,8 @@
-# go-ls: A Modern Go-based Alternative to ls
+# gls: A Modern Go-based Alternative to ls
 
 ## Project Overview
 
-go-ls is a modern alternative to the traditional `ls` command, written in Go. It aims to provide enhanced features like color-coded output, file metadata display, tree view, and Git integration, similar to Rust's `eza` tool, but implemented in Go.
+gls is a modern alternative to the traditional `ls` command, written in Go. It aims to provide enhanced features like color-coded output, file metadata display, tree view, and Git integration, similar to Rust's `eza` tool, but implemented in Go.
 
 ## Goals
 
@@ -15,13 +15,13 @@ go-ls is a modern alternative to the traditional `ls` command, written in Go. It
 ## Project Structure
 
 ```
-go-ls/
+gls/
 ├── .gitignore
 ├── plan.md
 ├── README.md
 ├── go.mod
 ├── cmd/
-│   └── go-ls/
+│   └── gls/
 │       └── main.go
 ├── pkg/
 │   ├── colors/         # Terminal colors management
@@ -111,10 +111,10 @@ go-ls/
 ## Feature Roadmap
 
 - [x] Setup basic project structure
-- [ ] Basic file scanning
-- [ ] Simple grid view
-- [ ] List view with basic metadata
-- [ ] Color coding for file types
+- [x] Basic file scanning
+- [x] Simple grid view
+- [x] List view with basic metadata
+- [x] Color coding for file types
 - [ ] Git integration
 - [ ] Tree view
 - [ ] Icons support

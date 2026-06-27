@@ -6,8 +6,8 @@ import (
 	"errors"
 
 	"github.com/spf13/cobra"
-	"github.com/logando-al/go-ls/pkg/scanner"
-	"github.com/logando-al/go-ls/pkg/output"
+	"github.com/logando-al/gls/pkg/scanner"
+	"github.com/logando-al/gls/pkg/output"
 )
 
 var (
@@ -28,9 +28,9 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "go-ls [directory]",
+	Use:   "gls [directory]",
 	Short: "A modern Go-based alternative to ls",
-	Long: `go-ls is a modern alternative to the traditional 'ls' command, 
+	Long: `gls is a modern alternative to the traditional 'ls' command, 
 written in Go. It provides enhanced features like color-coding, file 
 metadata display, tree view, and Git integration.
 

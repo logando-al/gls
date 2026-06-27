@@ -1,6 +1,6 @@
-# go-ls: A Modern Go-based Alternative to ls
+# gls: A Modern Go-based Alternative to ls
 
-go-ls is a modern alternative to the traditional `ls` command, written in Go. It provides enhanced features like color-coding, file metadata display, tree view, and Git integration, similar to Rust's `eza` tool, but implemented in Go.
+gls is a modern alternative to the traditional `ls` command, written in Go. It provides enhanced features like color-coding, file metadata display, tree view, and Git integration, similar to Rust's `eza` tool, but implemented in Go.
 
 ## Features
 
@@ -13,32 +13,44 @@ go-ls is a modern alternative to the traditional `ls` command, written in Go. It
 
 ## Installation
 
-To install go-ls, run:
+To install gls, run:
 
 ```bash
-go install github.com/logando-al/go-ls
+go install github.com/logando-al/gls
 ```
 
 ## Usage
 
 ```bash
 # Basic usage (similar to ls)
-go-ls
+gls
 
 # Long view with file details
-go-ls -l
+gls -l
 
 # Include hidden files
-go-ls -a
+gls -a
 
 # Recursive view in tree format
-go-ls -T
+gls -T
 
 # Show Git status alongside file listings
-go-ls --git
+gls --git
 
 # Sort by modification time
-go-ls --sort=time
+gls --sort=time
+```
+
+## Linux Alias Setup
+
+If you're using Linux or a Unix-like system, you can create an alias to use `gls` in place of the standard `ls` command:
+
+```bash
+# Add this to your ~/.bashrc or ~/.zshrc file
+alias ls="gls"
+
+# Then reload your shell configuration
+source ~/.bashrc  # or source ~/.zshrc
 ```
 
 ## Status
@@ -52,3 +64,7 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 ## License
 
 MIT License
+
+---
+
+*Note: This project has been created with assistance from ilmu-v3.1 (ILMU AI)*

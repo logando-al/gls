@@ -1,4 +1,4 @@
-module github.com/logando-al/go-ls
+module github.com/logando-al/gls
 
 go 1.26
 

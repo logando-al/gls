@@ -2,8 +2,8 @@ package output
 
 import (
 	"fmt"
-	"github.com/logando-al/go-ls/pkg/scanner"
-	"github.com/logando-al/go-ls/pkg/colors"
+	"github.com/logando-al/gls/pkg/scanner"
+	"github.com/logando-al/gls/pkg/colors"
 )
 
 // Format defines the type of output format

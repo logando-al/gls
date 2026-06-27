@@ -8,7 +8,7 @@ import (
 	"strings"
 	
 	"github.com/fatih/color"
-	"github.com/logando-al/go-ls/pkg/scanner"
+	"github.com/logando-al/gls/pkg/scanner"
 )
 
 // ColorManager manages color-coding for files
