@@ -5,11 +5,17 @@
 *.so
 *.dylib
 
+# Project-specific binaries
+gls
+go-ls
+
 # Test binary, built with `go test -c`
 *.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+coverage/
+*.cov
 
 # Dependency directories (remove the comment below to include it)
 vendor/
@@ -31,4 +37,10 @@ go.work
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db# silenced # gls
+Thumbs.db
+
+# Logs and temporary files
+*.log
+tmp/
+dist/
+build/

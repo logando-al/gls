@@ -29,12 +29,12 @@ type Options struct {
 // Scan scans a directory and returns file information
 func Scan(dir string, options Options) ([]FileInfo, error) {
 	var entries []FileInfo
-	
+
 	baseInfo, err := os.Stat(dir)
 	if err != nil {
 		return nil, err
 	}
-	
+
 	if !baseInfo.IsDir() {
 		entry, err := createFileInfo(dir, baseInfo)
 		if err != nil {
@@ -42,36 +42,36 @@ func Scan(dir string, options Options) ([]FileInfo, error) {
 		}
 		return []FileInfo{entry}, nil
 	}
-	
+
 	files, err := os.ReadDir(dir)
 	if err != nil {
 		return nil, err
 	}
-	
+
 	for _, file := range files {
 		// Skip hidden files unless ShowHidden is true
 		if !options.ShowHidden && isHidden(file.Name()) {
 			continue
 		}
-		
+
 		// Skip . and .. unless All is true
 		if !options.All && (file.Name() == "." || file.Name() == "..") {
 			continue
 		}
-		
+
 		absPath := filepath.Join(dir, file.Name())
 		info, err := file.Info()
 		if err != nil {
 			continue
 		}
-		
+
 		entry, err := createFileInfo(absPath, info)
 		if err != nil {
 			continue
 		}
-		
+
 		entries = append(entries, entry)
-		
+
 		// Recursive scanning if needed
 		if options.Recursive && file.IsDir() && file.Name() != "." && file.Name() != ".." {
 			subEntries, err := Scan(absPath, options)
@@ -80,7 +80,7 @@ func Scan(dir string, options Options) ([]FileInfo, error) {
 			}
 		}
 	}
-	
+
 	return entries, nil
 }
 
@@ -94,7 +94,7 @@ func createFileInfo(path string, info fs.FileInfo) (FileInfo, error) {
 		ModTime: info.ModTime(),
 		IsDir:   info.IsDir(),
 	}
-	
+
 	// Check if it's a symbolic link
 	if entry.Mode&os.ModeSymlink != 0 {
 		entry.IsLink = true
@@ -102,7 +102,7 @@ func createFileInfo(path string, info fs.FileInfo) (FileInfo, error) {
 			entry.LinkPath = linkPath
 		}
 	}
-	
+
 	return entry, nil
 }
 
