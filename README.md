@@ -13,11 +13,25 @@ gls is a modern alternative to the traditional `ls` command, written in Go. It p
 
 ## Installation
 
-To install gls, run:
+You can install gls using one of the following methods:
+
+### From Go (Recommended)
 
 ```bash
-go install github.com/logando-al/gls
+go install github.com/logando-al/gls@v0.1.0
 ```
+
+### From Source
+
+```bash
+git clone https://github.com/logando-al/gls.git
+cd gls
+go build -o gls ./cmd/gls
+```
+
+### From GitHub Releases
+
+Download the pre-compiled binary from the [releases page](https://github.com/logando-al/gls/releases).
 
 ## Usage
 
