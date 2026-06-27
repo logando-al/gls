@@ -10,6 +10,9 @@ import (
 	"github.com/logando-al/gls/pkg/output"
 )
 
+// Version is the version of gls, set at build time
+var Version = "v0.1.0"
+
 var (
 	showHidden      bool
 	showDetails     bool
@@ -35,10 +38,14 @@ written in Go. It provides enhanced features like color-coding, file
 metadata display, tree view, and Git integration.
 
 If no directory is specified, the current directory is used.`,
+	Version: Version,
 	RunE: runLs,
 }
 
 func init() {
+	// Add version flag
+	rootCmd.Version = Version
+	
 	// Basic options
 	rootCmd.Flags().BoolVarP(&showDetails, "long", "l", false, "Show file details (permissions, size, timestamp)")
 	rootCmd.Flags().BoolVarP(&showAll, "all", "a", false, "Show hidden files (files starting with .)")
